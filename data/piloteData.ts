@@ -10,6 +10,12 @@ export const players: Pilote[] = [
   { name: "Renanito", team: "Mercedes", isAI: false },
   { name: "TheDarkKnight", team: "Mercedes", isAI: false },
   { name: "Alex123fr", team: "AstonMartin", isAI: false },
+  { name: "Alexbenzema11", team: "Williams", isAI: false },
+  { name: "Floo2909", team: "AlphaTauri", isAI: false },
+  { name: "Quentin_Boateng", team: "AlphaTauri", isAI: false },
+  { name: "Veronicoje91", team: "Haas", isAI: false },
+  { name: "Davido91", team: "Haas", isAI: false },
+  { name: "Synesky", team: "Alpine", isAI: false },
 ];
 
 export const bots: Pilote[] = [

@@ -1,12 +1,14 @@
 import { TeamName } from "./team";
 
 export interface Pilote {
-  name: PlayerName | BotName;
+  name: PiloteName;
   team: TeamName;
   isAI?: boolean;
 }
 
-export type PlayerName =
+export type PiloteName = PlayerName | BotName;
+
+type PlayerName =
   | "Dikson"
   | "MBphenix"
   | "Hugo"
@@ -15,9 +17,15 @@ export type PlayerName =
   | "PriceMGL"
   | "Renanito"
   | "TheDarkKnight"
-  | "Alex123fr";
+  | "Alex123fr"
+  | "Alexbenzema11"
+  | "Floo2909"
+  | "Veronicoje91"
+  | "Davido91"
+  | "Quentin_Boateng"
+  | "Synesky";
 
-export type BotName =
+type BotName =
   | "Verstappen"
   | "Perez"
   | "Hamilton"

@@ -1,4 +1,4 @@
-import { Track } from "@/types/race";
+import { Track } from "@/types/track";
 
 const bahrainGP: Track = { order: 1, name: "Bahrain" };
 const jeddahGP: Track = { order: 2, name: "Jeddah" };

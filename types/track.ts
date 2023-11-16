@@ -1,5 +1,3 @@
-import { PiloteResult } from "./piloteResult";
-
 export type TrackName =
   | "Bahrain"
   | "Jeddah"
@@ -29,9 +27,4 @@ export interface Track {
   order: number;
   name: TrackName;
   country?: string;
-}
-
-export interface RaceResult {
-  track: Track;
-  results: PiloteResult[];
 }
