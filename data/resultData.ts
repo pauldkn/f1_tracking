@@ -1,6 +1,6 @@
 import { RaceResult } from "@/types/result";
 
-export const allResults: RaceResult[] = [
+export const raceResults: RaceResult[] = [
   {
     track: { name: "Bahrain", order: 1 },
     fastestLap: "Hugo",
