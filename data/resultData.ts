@@ -161,4 +161,20 @@ export const raceResults: RaceResult[] = [
       { position: 10, pilote: "Piastri", points: 1 },
     ],
   },
+  {
+    track: { name: "Hungaroring", order: 11 },
+    fastestLap: "Hugo",
+    results: [
+      { position: 1, pilote: "Dikson", points: 25 },
+      { position: 2, pilote: "Hugo", points: 19 },
+      { position: 3, pilote: "Toms_971", points: 15 },
+      { position: 4, pilote: "Edy", points: 12 },
+      { position: 5, pilote: "PriceMGL", points: 10 },
+      { position: 6, pilote: "Russel", points: 8 },
+      { position: 7, pilote: "Tsunoda", points: 6 },
+      { position: 8, pilote: "Sargeant", points: 4 },
+      { position: 9, pilote: "Zhou", points: 2 },
+      { position: 10, pilote: "Piastri", points: 1 },
+    ],
+  },
 ];
