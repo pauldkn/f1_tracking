@@ -29,7 +29,7 @@ export const RaceResultTable = ({ results }: { results: PiloteResult[] }) => {
   });
 
   return (
-    <div className="border border-yellow-200 text-lg grid place-items-center p-5">
+    <div className="text-lg grid place-items-center p-5">
       <table className="max-w-xl">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
