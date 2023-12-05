@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { getPiloteLeagueResults, getTeamLeagueResults } from '@/utils'
 import { LeagueResultPiloteTable } from './LeagueResultPiloteTable'
 import { LeagueResultTeamTable } from './LeagueResultTeamTable'
+import { Title } from './ui/Title'
 
 export const LeagueResultSection = () => {
   const leagueResults = getPiloteLeagueResults()
@@ -13,13 +14,13 @@ export const LeagueResultSection = () => {
   }, [])
 
   return (
-    <section className="flex flex-wrap justify-center gap-10 border border-yellow-200">
-      <div>
-        <h1 className="text-center text-2xl font-semibold">Résultats Pilotes</h1>
+    <section className="flex flex-wrap justify-center gap-10">
+      <div className="flex flex-col items-center gap-5">
+        <Title text="Classement Pilotes" />
         <LeagueResultPiloteTable />
       </div>
-      <div>
-        <h1 className="text-center text-2xl font-semibold">Résultats Écuries</h1>
+      <div className="flex flex-col items-center gap-5">
+        <Title text="Classement Écuries" />
         <LeagueResultTeamTable />
       </div>
     </section>

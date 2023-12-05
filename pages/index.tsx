@@ -7,7 +7,7 @@ const font = CustomFont({ subsets: ['latin'], display: 'swap', weight: 'variable
 
 export default function Home() {
   return (
-    <div className={cn(font.className, 'flex flex-col gap-20 p-10')}>
+    <div className={cn(font.className, 'flex flex-col gap-20 py-10 text-sm sm:p-10')}>
       <LeagueResultSection />
       <RaceResultSection />
     </div>

@@ -34,7 +34,7 @@ export const LeagueResultPiloteTable = () => {
   })
 
   return (
-    <div className="grid place-items-center p-5">
+    <div className="grid place-items-center">
       <table className="max-w-xl">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
