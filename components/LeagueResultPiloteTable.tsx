@@ -5,6 +5,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { PiloteResultWithTeam } from '@/types/result'
+import { getPiloteLeagueResults } from '@/utils'
 
 const columnHelper = createColumnHelper<PiloteResultWithTeam>()
 const columns = [
@@ -25,9 +26,9 @@ const columns = [
   }),
 ]
 
-export const RaceResultTable = ({ results }: { results: PiloteResultWithTeam[] }) => {
+export const LeagueResultPiloteTable = () => {
   const table = useReactTable({
-    data: results,
+    data: getPiloteLeagueResults(),
     columns,
     getCoreRowModel: getCoreRowModel(),
   })

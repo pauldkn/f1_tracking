@@ -4,16 +4,14 @@ import {
   getCoreRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { PiloteResultWithTeam } from '@/types/result'
+import { TeamResult } from '@/types/result'
+import { getTeamLeagueResults } from '@/utils'
 
-const columnHelper = createColumnHelper<PiloteResultWithTeam>()
+const columnHelper = createColumnHelper<TeamResult>()
 const columns = [
   columnHelper.accessor('position', {
     header: () => <div className="text-start">Pos.</div>,
     cell: (props) => <span className="text-start font-light">{props.getValue()}</span>,
-  }),
-  columnHelper.accessor('pilote', {
-    header: () => <div className="text-start">Player</div>,
   }),
   columnHelper.accessor('team', {
     header: () => <div className="text-start">Team</div>,
@@ -25,9 +23,9 @@ const columns = [
   }),
 ]
 
-export const RaceResultTable = ({ results }: { results: PiloteResultWithTeam[] }) => {
+export const LeagueResultTeamTable = () => {
   const table = useReactTable({
-    data: results,
+    data: getTeamLeagueResults(),
     columns,
     getCoreRowModel: getCoreRowModel(),
   })

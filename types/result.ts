@@ -1,33 +1,33 @@
-import { PiloteName } from "./pilote";
-import { TeamName } from "./team";
-import { Track } from "./track";
+import { PiloteName } from './pilote'
+import { TeamName } from './team'
+import { Track } from './track'
 
 export interface PiloteScore {
-  pilote: PiloteName;
-  points: number;
+  pilote: PiloteName
+  points: number
 }
 export interface TeamScore {
-  team: TeamName;
-  points: number;
+  team: TeamName
+  points: number
 }
 
 export interface PiloteResult extends PiloteScore {
-  position: number;
+  position: number
 }
 export interface TeamResult extends TeamScore {
-  position: number;
+  position: number
 }
 export interface PiloteResultWithTeam extends PiloteResult {
-  team: TeamName | "NC";
+  team: TeamName | 'NC'
 }
 
 export interface RawRaceResult {
-  track: Track;
-  fastestLap: PiloteName | null;
-  results: PiloteResult[];
+  track: Track
+  fastestLap: PiloteName | null
+  results: PiloteResult[]
 }
 export interface RaceResult {
-  track: Track;
-  fastestLap: PiloteName | null;
-  results: PiloteResultWithTeam[];
+  track: Track
+  fastestLap: PiloteName | null
+  results: PiloteResultWithTeam[]
 }
