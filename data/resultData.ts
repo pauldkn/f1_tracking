@@ -1,6 +1,7 @@
-import { RaceResult } from "@/types/result";
+import { RaceResult, RawRaceResult } from "@/types/result";
+import { getResultsWithTeam } from "@/utils";
 
-export const raceResults: RaceResult[] = [
+const raceResults: RawRaceResult[] = [
   {
     track: { name: "Bahrain", order: 1 },
     fastestLap: "Hugo",
@@ -194,3 +195,8 @@ export const raceResults: RaceResult[] = [
     ],
   },
 ];
+
+export const raceResultData: RaceResult[] = raceResults.map((raceResult) => ({
+  ...raceResult,
+  results: getResultsWithTeam(raceResult.results),
+}));

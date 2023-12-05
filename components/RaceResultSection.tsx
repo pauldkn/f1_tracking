@@ -1,16 +1,17 @@
 import { useState } from "react";
-import { raceResults } from "@/data/resultData";
-import { RaceResultTable } from "./RaceResultTable";
 import { TrackName } from "@/types/track";
+import { raceResultData } from "@/data/resultData";
+import { RaceResultTable } from "./RaceResultTable";
 
 export const RaceResultSection = () => {
   const [track, setTrack] = useState<TrackName>("Zandvoort");
-  const race = raceResults.find((r) => r.track.name === track);
+  const race = raceResultData.find((r) => r.track.name === track);
 
   return (
-    <section>
+    <section className="border border-yellow-200">
+      <h1 className="text-2xl font-semibold">Résultats des courses</h1>
       <div id="trackList" className="flex flex-wrap items-center justify-center gap-2 p-10">
-        {raceResults.map((race, i) => (
+        {raceResultData.map((race, i) => (
           <div
             key={i}
             className={`w-40 min-w-fit p-2 grid place-items-center hover:cursor-pointer ${
@@ -22,7 +23,7 @@ export const RaceResultSection = () => {
           </div>
         ))}
       </div>
-      {!race ? <p>Not found.</p> : <RaceResultTable results={race.results} />}
+      {!race?.results ? <p>Not found.</p> : <RaceResultTable results={race.results} />}
     </section>
   );
 };

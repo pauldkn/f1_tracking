@@ -4,24 +4,28 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { PiloteResult } from "@/types/result";
+import { PiloteResultWithTeam } from "@/types/result";
 
-const columnHelper = createColumnHelper<PiloteResult>();
+const columnHelper = createColumnHelper<PiloteResultWithTeam>();
 const columns = [
   columnHelper.accessor("position", {
-    header: () => <div className="text-start w-min">Pos.</div>,
-    cell: (props) => <span className="text-start">{props.getValue()}</span>,
+    header: () => <div className="text-start">Pos.</div>,
+    cell: (props) => <span className="text-start font-light">{props.getValue()}</span>,
   }),
   columnHelper.accessor("pilote", {
-    header: () => <div className="text-start w-min">Player</div>,
+    header: () => <div className="text-start">Player</div>,
+  }),
+  columnHelper.accessor("team", {
+    header: () => <div className="text-start">Team</div>,
+    cell: (props) => <span className="font-light">{props.getValue()}</span>,
   }),
   columnHelper.accessor("points", {
-    header: () => <div className="text-end w-min">Points</div>,
+    header: () => <div className="text-end">Points</div>,
     cell: (props) => <span className="block text-end">{props.getValue()}</span>,
   }),
 ];
 
-export const RaceResultTable = ({ results }: { results: PiloteResult[] }) => {
+export const RaceResultTable = ({ results }: { results: PiloteResultWithTeam[] }) => {
   const table = useReactTable({
     data: results,
     columns,
@@ -29,7 +33,7 @@ export const RaceResultTable = ({ results }: { results: PiloteResult[] }) => {
   });
 
   return (
-    <div className="text-lg grid place-items-center p-5">
+    <div className="grid place-items-center p-5">
       <table className="max-w-xl">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
