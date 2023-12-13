@@ -10,7 +10,7 @@ export const Table = <T,>({ data, columns }: TableProps<T>) => {
   const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel() })
 
   return (
-    <div className="grid place-items-center">
+    <div className="xs:text-sm grid place-items-center text-xs">
       <table className="max-w-xl border-separate border-spacing-y-0.5">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (

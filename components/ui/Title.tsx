@@ -4,7 +4,7 @@ interface TitleProps extends React.HTMLProps<HTMLHeadingElement> {
 
 export const Title: React.FC<TitleProps> = (props) => {
   return (
-    <h1 className="text-3xl font-semibold" {...props}>
+    <h1 className="text-2xl font-semibold" {...props}>
       {props.text}
     </h1>
   )

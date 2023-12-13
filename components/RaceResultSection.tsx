@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import cn from 'classnames'
 import { raceResultData } from '@/data/resultData'
 import { Title } from './ui/Title'
 import { PiloteResultWithTeam, RaceResult } from '@/types/result'
 import { createColumnHelper } from '@tanstack/react-table'
 import { Table } from './ui/Table'
+import { Button } from './ui/Button'
 
 export const RaceResultSection = () => {
   const [currentRace, setCurrentRace] = useState<RaceResult>(
@@ -36,21 +36,22 @@ export const RaceResultSection = () => {
       <Title text="Résultats des GP" />
       <div id="trackList" className="flex flex-wrap items-center justify-center gap-1 p-10">
         {raceResultData.map((race, i) => (
-          <button
+          <Button
             key={i}
-            className={cn(
-              'grid w-20 min-w-fit place-items-center rounded bg-slate-900 p-2 hover:cursor-pointer hover:bg-slate-950 md:w-40',
-              { 'bg-slate-950 hover:bg-slate-950': race.track.name === currentRace.track.name }
-            )}
+            isActive={race.track.name === currentRace.track.name}
+            text={race.track.name}
             onClick={() => setCurrentRace(race)}
-          >
-            <span>{race.track.name}</span>
-          </button>
+          />
         ))}
       </div>
-      <div className="mb-10 flex w-full max-w-lg items-center justify-between rounded border-2 border-slate-900 p-4 font-medium">
-        <span>Meilleur tour {`(${currentRace.track.name})`}</span>
-        <span>{currentRace.fastestLap}</span>
+      <div className="mb-10 w-full max-w-lg px-10">
+        <div
+          id="fastestLap"
+          className="flex items-center justify-between rounded border-2 border-slate-900 p-4 font-medium"
+        >
+          <span>Meilleur tour {`(${currentRace.track.name})`}</span>
+          <span>{currentRace.fastestLap}</span>
+        </div>
       </div>
       <Table columns={columns} data={currentRace.results} />
     </section>
