@@ -1,30 +1,33 @@
 import { useState } from 'react'
-import { TrackName } from '@/types/track'
 import { raceResultData } from '@/data/resultData'
 import { RaceResultTable } from './RaceResultTable'
 import { Title } from './ui/Title'
+import { RaceResult } from '@/types/result'
+import cn from 'classnames'
 
 export const RaceResultSection = () => {
-  const [track, setTrack] = useState<TrackName>('Zandvoort')
-  const race = raceResultData.find((r) => r.track.name === track)
+  const [currentRace, setCurrentRace] = useState<RaceResult>(
+    raceResultData[raceResultData.length - 1]
+  )
 
   return (
     <section className="flex flex-wrap justify-center">
       <Title text="Résultats des GP" />
       <div id="trackList" className="flex flex-wrap items-center justify-center gap-2 p-10">
         {raceResultData.map((race, i) => (
-          <div
+          <button
             key={i}
-            className={`grid w-20 min-w-fit place-items-center p-2 hover:cursor-pointer md:w-40 ${
-              race.track.name === track ? 'bg-slate-700' : 'bg-slate-900 hover:bg-slate-800'
-            }`}
-            onClick={() => setTrack(race.track.name)}
+            className={cn(
+              'grid w-20 min-w-fit place-items-center bg-slate-900 p-2 hover:cursor-pointer hover:bg-slate-800 md:w-40',
+              { 'bg-slate-700 hover:bg-slate-700': race.track.name === currentRace.track.name }
+            )}
+            onClick={() => setCurrentRace(race)}
           >
             <span>{race.track.name}</span>
-          </div>
+          </button>
         ))}
       </div>
-      {!race?.results ? <p>Not found.</p> : <RaceResultTable results={race.results} />}
+      <RaceResultTable results={currentRace.results} />
     </section>
   )
 }

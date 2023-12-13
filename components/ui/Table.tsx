@@ -1,37 +1,12 @@
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from '@tanstack/react-table'
-import { PiloteResultWithTeam } from '@/types/result'
-import { getPiloteLeagueResults } from '@/utils'
+import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 
-const columnHelper = createColumnHelper<PiloteResultWithTeam>()
-const columns = [
-  columnHelper.accessor('position', {
-    header: () => <div className="text-start">Pos.</div>,
-    cell: (props) => <span className="text-start font-light">{props.getValue()}</span>,
-  }),
-  columnHelper.accessor('pilote', {
-    header: () => <div className="text-start">Player</div>,
-  }),
-  columnHelper.accessor('team', {
-    header: () => <div className="text-start">Team</div>,
-    cell: (props) => <span className="font-light">{props.getValue()}</span>,
-  }),
-  columnHelper.accessor('points', {
-    header: () => <div className="text-end">Points</div>,
-    cell: (props) => <span className="block text-end">{props.getValue()}</span>,
-  }),
-]
+interface TableProps<T> {
+  columns: ColumnDef<T, any>[]
+  data: T[]
+}
 
-export const LeagueResultPiloteTable = () => {
-  const table = useReactTable({
-    data: getPiloteLeagueResults(),
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  })
+export const Table = <T,>({ data, columns }: TableProps<T>) => {
+  const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel() })
 
   return (
     <div className="grid place-items-center">
