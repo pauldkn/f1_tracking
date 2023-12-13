@@ -15,7 +15,7 @@ export const LeagueResultSection = () => {
     }),
     teamColumnHelper.accessor('team', {
       header: () => <div className="text-start">Team</div>,
-      cell: (props) => <span className="font-light">{props.getValue()}</span>,
+      cell: (props) => <span className="font-medium">{props.getValue()}</span>,
     }),
     teamColumnHelper.accessor('points', {
       header: () => <div className="text-end">Points</div>,
@@ -29,6 +29,7 @@ export const LeagueResultSection = () => {
     }),
     piloteColumnHelper.accessor('pilote', {
       header: () => <div className="text-start">Player</div>,
+      cell: (props) => <span className="text-start font-medium">{props.getValue()}</span>,
     }),
     piloteColumnHelper.accessor('team', {
       header: () => <div className="text-start">Team</div>,

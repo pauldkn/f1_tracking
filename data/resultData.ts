@@ -210,6 +210,22 @@ const raceResults: RawRaceResult[] = [
       { position: 10, pilote: 'Bottas', points: 1 },
     ],
   },
+  {
+    track: { name: 'Monza', order: 14 },
+    fastestLap: 'Dikson',
+    results: [
+      { position: 1, pilote: 'Dikson', points: 26 },
+      { position: 2, pilote: 'Toms_971', points: 18 },
+      { position: 3, pilote: 'Edy', points: 15 },
+      { position: 4, pilote: 'Hugo', points: 12 },
+      { position: 5, pilote: 'TheDarkKnight', points: 10 },
+      { position: 6, pilote: 'Alex123fr', points: 8 },
+      { position: 7, pilote: 'Piastri', points: 6 },
+      { position: 8, pilote: 'Ocon', points: 4 },
+      { position: 9, pilote: 'Tsunoda', points: 2 },
+      { position: 10, pilote: 'Albon', points: 1 },
+    ],
+  },
 ]
 
 export const raceResultData: RaceResult[] = raceResults.map((raceResult) => ({
