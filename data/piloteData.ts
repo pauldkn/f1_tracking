@@ -1,6 +1,6 @@
 import { Pilote } from '@/types/pilote'
 
-export const players: Pilote[] = [
+export const playersData: Pilote[] = [
   { name: 'Dikson', team: 'McLaren', isAI: false },
   { name: 'MBphenix', team: 'McLaren', isAI: false },
   { name: 'Hugo', team: 'RedBull', isAI: false },
@@ -19,7 +19,7 @@ export const players: Pilote[] = [
   { name: 'unknown', team: 'Williams', isAI: false },
 ]
 
-export const bots: Pilote[] = [
+export const botsData: Pilote[] = [
   { name: 'Norris', team: 'McLaren', isAI: true },
   { name: 'Piastri', team: 'McLaren', isAI: true },
   { name: 'Verstappen', team: 'RedBull', isAI: true },
@@ -42,4 +42,4 @@ export const bots: Pilote[] = [
   { name: 'Zhou', team: 'AlfaRomeo', isAI: true },
 ]
 
-export const piloteData: Pilote[] = [...players, ...bots]
+export const piloteData: Pilote[] = [...playersData, ...botsData]

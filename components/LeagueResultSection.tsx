@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { PiloteResultWithTeam, TeamResult } from '@/types/result'
 import { getPiloteLeagueResults, getTeamLeagueResults } from '@/utils'
 import { Table } from './ui/Table'
 import { Title } from './ui/Title'
+import { Button } from './ui/Button'
 
 export const LeagueResultSection = () => {
+  const [view, setView] = useState<'pilote' | 'team'>('pilote')
   const teamColumnHelper = createColumnHelper<TeamResult>()
   const piloteColumnHelper = createColumnHelper<PiloteResultWithTeam>()
 
@@ -42,14 +45,18 @@ export const LeagueResultSection = () => {
   ]
 
   return (
-    <section className="flex flex-wrap justify-center gap-10">
-      <div className="flex flex-col items-center gap-5">
-        <Title text="Classement Pilotes" />
-        <Table columns={piloteColumns} data={getPiloteLeagueResults()} />
+    <section className="flex flex-col items-center gap-8">
+      <Title text="Classement de la ligue" />
+      <div id="leagueResultControllers" className="flex items-center justify-center gap-4">
+        <Button text="Pilotes" isActive={view === 'pilote'} onClick={() => setView('pilote')} />
+        <Button text="Éuries" isActive={view === 'team'} onClick={() => setView('team')} />
       </div>
       <div className="flex flex-col items-center gap-5">
-        <Title text="Classement Écuries" />
-        <Table columns={teamColumns} data={getTeamLeagueResults()} />
+        {view === 'pilote' ? (
+          <Table columns={piloteColumns} data={getPiloteLeagueResults()} />
+        ) : (
+          <Table columns={teamColumns} data={getTeamLeagueResults()} />
+        )}
       </div>
     </section>
   )

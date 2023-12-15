@@ -1,7 +1,7 @@
 import cn from 'classnames'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  isActive: boolean
+  isActive?: boolean
   text: string
 }
 
