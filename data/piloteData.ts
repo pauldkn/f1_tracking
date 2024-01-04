@@ -16,7 +16,7 @@ export const playersData: Pilote[] = [
   { name: 'Veronicoje9', team: 'Haas', isAI: false },
   { name: 'Davido9', team: 'Haas', isAI: false },
   { name: 'Synesky', team: 'Alpine', isAI: false },
-  { name: 'unknown', team: 'Williams', isAI: false },
+  { name: 'Julien', team: 'Alpine', isAI: false },
 ]
 
 export const botsData: Pilote[] = [

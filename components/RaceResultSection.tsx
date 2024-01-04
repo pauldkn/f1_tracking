@@ -44,16 +44,8 @@ export const RaceResultSection = () => {
           />
         ))}
       </div>
-      <div className="mb-10 w-full max-w-lg px-10">
-        <div
-          id="fastestLap"
-          className="flex items-center justify-between rounded border-2 border-slate-900 p-4 font-medium"
-        >
-          <span>Meilleur tour {`(${currentRace.track.name})`}</span>
-          <span>{currentRace.fastestLap}</span>
-        </div>
-      </div>
       <Table columns={columns} data={currentRace.results} />
+      <span className="mt-4 italic">Meilleur tour en piste : {currentRace.fastestLap}</span>
     </section>
   )
 }

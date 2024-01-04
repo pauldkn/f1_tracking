@@ -24,7 +24,7 @@ type PlayerName =
   | 'Davido9'
   | 'Quentin_B'
   | 'Synesky'
-  | 'unknown'
+  | 'Julien'
 
 type BotName =
   | 'Verstappen'
