@@ -34,7 +34,7 @@ export const RaceResultSection = () => {
   return (
     <section className="flex flex-col items-center">
       <Title text="Résultats des GP" />
-      <div id="trackList" className="flex flex-wrap items-center justify-center gap-1 p-10">
+      <div id="trackList" className="flex flex-wrap items-center justify-center gap-1 p-8">
         {raceResultData.map((race, i) => (
           <Button
             key={i}
@@ -45,7 +45,9 @@ export const RaceResultSection = () => {
         ))}
       </div>
       <Table columns={columns} data={currentRace.results} />
-      <span className="mt-4 italic">Meilleur tour en piste : {currentRace.fastestLap}</span>
+      <span className="mt-4 font-light italic">
+        Meilleur tour en piste : {currentRace.fastestLap}
+      </span>
     </section>
   )
 }
