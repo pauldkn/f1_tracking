@@ -322,6 +322,38 @@ const raceResults: RawRaceResult[] = [
       { position: 10, pilote: 'Hulkenberg', points: 1 },
     ],
   },
+  {
+    track: { name: 'Las Vegas', order: 21 },
+    fastestLap: 'Hugo',
+    results: [
+      { position: 1, pilote: 'Hugo', points: 26 },
+      { position: 2, pilote: 'Toms_971', points: 18 },
+      { position: 3, pilote: 'Tsunoda', points: 15 },
+      { position: 4, pilote: 'Zhou', points: 12 },
+      { position: 5, pilote: 'Ocon', points: 10 },
+      { position: 6, pilote: 'Bottas', points: 8 },
+      { position: 7, pilote: 'Gasly', points: 6 },
+      { position: 8, pilote: 'Sargeant', points: 4 },
+      { position: 9, pilote: 'Ricciardo', points: 2 },
+      { position: 10, pilote: 'Piastri', points: 1 },
+    ],
+  },
+  {
+    track: { name: 'Abu Dhabi', order: 22 },
+    fastestLap: 'Dikson',
+    results: [
+      { position: 1, pilote: 'Dikson', points: 25 },
+      { position: 2, pilote: 'Hugo', points: 18 },
+      { position: 3, pilote: 'MBphenix', points: 16 },
+      { position: 4, pilote: 'TheDarkKnight', points: 12 },
+      { position: 5, pilote: 'Edy', points: 10 },
+      { position: 6, pilote: 'Russel', points: 8 },
+      { position: 7, pilote: 'Bottas', points: 6 },
+      { position: 8, pilote: 'Sargeant', points: 4 },
+      { position: 9, pilote: 'Zhou', points: 2 },
+      { position: 10, pilote: 'Gasly', points: 1 },
+    ],
+  },
 ]
 
 export const raceResultData: RaceResult[] = raceResults.map((raceResult) => ({
